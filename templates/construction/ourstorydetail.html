@@ -1,0 +1,66 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+{{post.title}}
+{% endblock title %}
+
+{% block content %}
+
+  <div class="breadcrumb-bg w3l-inner-page-breadcrumb py-5">
+    <div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">
+      <h2 class="title pt-5">Our Story</h2>
+      <ul class="breadcrumbs-custom-path mt-3 text-center">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span>{{post.title}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="w3l-blog py-5" id="blog">
+    <div class="container py-lg-5 py-md-4 py-2">
+      <div class="row inner-sec-w3ls">
+        {% if post %}
+       <div class="col-lg-7 about-in blog-grid-info text-left mt-5">
+        <div class="card img">
+          <div class="card-body img">
+            <a href="blog-single.html" class="d-block">
+              {% if post.leadimg %}
+              <img src="{{post.leadimg.url}}" alt="" class="img-fluid radius-image">
+              {% endif %}
+            </a>
+            <div class="blog-des mt-4">
+              <h5 class="card-title mb-2">{{post.title}}</h5>
+              <p class="mb-3">{{post.body | safe}}</p>
+            </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        
+        <div class="col-lg-4 about-in blog-grid-info text-left mt-5">
+          <div class="title-content text-left">
+            <h6 class="title-subhny mb-3"><span>Our Posts</span></h6>
+          </div>
+         {% if blog %}
+         {% for item in blog %}
+           <div class="card img">
+             <div class="card-body img">
+                <a href="{% url 'blogdetail' item.slug %}" class="d-block">
+                  <img src="{{item.leadimg.url}}" alt="" class="img-fluid radius-image">
+                </a>
+                <h5 class="card-title mb-2 mt-3"><a href="{% url 'blogdetail' item.slug %}">{{ item.title  | truncatechars:50 | safe }}</a>
+                </h5>
+                  <p class="mb-3"></p>
+
+              </div>
+           </div>
+         {% endfor %}        
+        {% endif %}
+        </div> 
+     
+      </div>
+    </div>
+    </div>
+  </section>
+{% endblock content %}

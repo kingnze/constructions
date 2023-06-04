@@ -1,0 +1,331 @@
+{% load static %}
+
+  <footer class="footer-28 position-relative py-5">
+    <div class="container">
+      <div class="row footer-top-28">
+        <div class="col-lg-6 footer-list-28 pr-lg-5 mt-5">
+          <h6 class="footer-title-28">Quick Contact</h6>
+          <p class="pr-lg-5">Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices in ligula. Semper at
+            tempufddfel. Learn more about our work! Lorem ipsum viverra feugiat.</p>
+
+          <div class="main-social-footer-28 mt-4">
+            <ul class="social-icons">
+              <li class="facebook">
+                <a href="#link" title="Facebook">
+                  <span class="fa fa-facebook" aria-hidden="true"></span>
+                </a>
+              </li>
+              <li class="twitter">
+                <a href="#link" title="Twitter">
+                  <span class="fa fa-twitter" aria-hidden="true"></span>
+                </a>
+              </li>
+              <li class="dribbble">
+                <a href="#link" title="Dribbble">
+                  <span class="fa fa-dribbble" aria-hidden="true"></span>
+                </a>
+              </li>
+              <li class="google">
+                <a href="#link" title="Google">
+                  <span class="fa fa-google" aria-hidden="true"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-md-5 col-6 footer-list-28 mt-5">
+              <h6 class="footer-title-28">Quick Links</h6>
+              <ul>
+                <li><a href="index.html"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span> Home</a>
+                </li>
+                <li><a href="about.html"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span> About
+                    us</a></li>
+                <li><a href="services.html"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span>
+                    Services</a></li>
+                <li><a href="blog.html"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span> Blog
+                    Posts</a></li>
+                <li><a href="contact.html"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span>
+                    Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-md-5 col-6 footer-list-28 mt-5">
+              <h6 class="footer-title-28">Our Services</h6>
+              <ul>
+                <li><a href="#reserch"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span> Chemical
+                    Reserch</a></li>
+                <li><a href="#construction"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span>
+                    Construction </a></li>
+                <li><a href="#agricultural"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span>
+                     Engineering</a></li>
+                <li><a href="#bridge"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span> Bridge
+                    Engineering</a></li>
+                <li><a href="#automotive"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span>
+                    Automotive</a></li>
+              </ul>
+            </div>
+            <!-- <div class="col-md-4 col-6 footer-list-28 mt-sm-5 mt-4">
+              <h6 class="footer-title-28">Help</h6>
+              <ul>
+                <li><a href="#privacy"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span> Privacy
+                    policy</a></li>
+                <li><a href="#support"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span>
+                    Support</a></li>
+                <li><a href="#terms"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span> Terms &
+                    conditions</a></li>
+                <li><a href="#license"><span class="fa fa-angle-double-right mr-2" aria-hidden="true"></span> License
+                    and uses</a></li>
+              </ul>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+      <div class="midd-footer-28 align-center py-2 mt-5">
+        <p style="font-size: 14px;" class="copy-footer-28 text-center">© 2023 ChiZoba<span class="fa fa-cogs"></span> All rights reserved. Developed by Kingnze</p>
+      </div>
+    </div>
+
+
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+      &#10548;
+    </button>
+    <script>
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction()
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("movetop").style.display = "block";
+        } else {
+          document.getElementById("movetop").style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <!-- /move top -->
+    <!-- //footer-28 block -->
+  </footer>
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/theme-change.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.js' %}"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('.owl-testimonial').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        responsiveClass: true,
+        autoplay: false,
+        autoplayTimeout: 5000,
+        autoplaySpeed: 1000,
+        autoplayHoverPause: false,
+        responsive: {
+          0: {
+            items: 1,
+            nav: false
+          },
+          480: {
+            items: 1,
+            nav: false
+          },
+          667: {
+            items: 1,
+            nav: false
+          },
+          1000: {
+            items: 1,
+            nav: false
+          }
+        }
+      })
+    })
+  </script>
+<script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+<script>
+  $(document).ready(function () {
+    $('.popup-with-zoom-anim').magnificPopup({
+      type: 'inline',
+      fixedContentPos: false,
+      fixedBgPos: true,
+      overflowY: 'auto',
+      closeBtnInside: true,
+      preloader: false,
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-zoom-in'
+    });
+
+  });
+</script>
+
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.countup.js' %}"></script>
+  <script>
+    $('.counter').countUp();
+  </script>
+  <script>
+    $(function () {
+      $('.navbar-toggler').click(function () {
+        $('body').toggleClass('noscroll');
+      })
+    });
+  </script>
+  <script>
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+      });
+    });
+  </script>
+
+<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+	<script>
+		$(function () {
+			$("#slider4").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: true,
+				speed: 1000,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+		});
+	</script>
+
+	<!-- js -->
+	<script type="text/javascript" src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+	<!-- //js -->
+	<!--search-bar-->
+	<script src="{% static 'js/main.js' %}"></script>
+	<!--//search-bar-->
+
+	<!-- js for portfolio lightbox -->
+	<script src="{% static 'js/jquery.chocolat.js' %}"></script>
+	<link rel="stylesheet " href="{% static 'css/chocolat.css' %}" type="text/css" media="all" />
+	<!--light-box-files -->
+	<script type="text/javascript ">
+		$(function () {
+			$('.portfolio-grids a').Chocolat();
+		});
+	</script>
+	<!-- /js for portfolio lightbox -->
+	<!-- Calendar -->
+	<link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}" />
+	<script src="{% static 'js/jquery-ui.css' %}"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar -->
+
+	<!-- time -->
+	<script type="text/javascript" src="{% static 'js/wickedpicker.js' %}"></script>
+	<script type="text/javascript">
+		$('.timepicker').wickedpicker({
+			twentyFour: false
+		});
+	</script>
+	<!-- //time -->
+
+	<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+	<script>
+		$(function () {
+			$("#slider4").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: true,
+				speed: 3000,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+		});
+	</script>
+	<!-- script for responsive tabs -->
+	<script src="{% static 'js/easy-responsive-tabs.js' %}"></script>
+	<script>
+		$(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion           
+				width: 'auto', //auto or any width like 600px
+				fit: true, // 100% fit in a container
+				closed: 'accordion', // Start closed if in accordion view
+				activate: function (event) { // Callback function if tab is switched
+					var $tab = $(this);
+					var $info = $('#tabInfo');
+					var $name = $('span', $info);
+					$name.text($tab.text());
+					$info.show();
+				}
+			});
+			$('#verticalTab').easyResponsiveTabs({
+				type: 'vertical',
+				width: 'auto',
+				fit: true
+			});
+		});
+	</script>
+	<!--// script for responsive tabs -->
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/*
+									var defaults = {
+							  			containerID: 'toTop', // fading element id
+										containerHoverID: 'toTopHover', // fading element hover id
+										scrollSpeed: 1200,
+										easingType: 'linear' 
+							 		};
+									*/
+
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>
+
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  

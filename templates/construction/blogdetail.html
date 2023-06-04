@@ -1,0 +1,103 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+{{post.title}}
+{% endblock title %}
+
+{% block content %}
+
+  <div class="breadcrumb-bg w3l-inner-page-breadcrumb py-5">
+    <div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">
+      <h2 class="title pt-5">Blog</h2>
+      <ul class="breadcrumbs-custom-path mt-3 text-center">
+        <li><a href="{% url 'blog' %}">Blog</a></li>
+        <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span>{{post.title}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="w3l-blog py-5" id="blog">
+    <div class="container py-lg-5 py-md-4 py-2">
+      <div class="row inner-sec-w3ls">
+        {% if post %}
+       <div class="col-lg-7 about-in blog-grid-info text-left mt-5">
+        <div class="card img">
+          
+          <div class="card-body img">
+            <h3 class="mb-2 ">{{post.title}}</h3>
+            <ul class="admin-post mb-4">
+              <li><span class="fa fa-user-o"></span> by {{post.author }}</li>
+            
+            </ul>
+            <a href="blog-single.html" class="d-block">
+              {% if post.leadimg %}
+              <img src="{{post.leadimg.url}}" alt="" class="img-fluid radius-image">
+              {% endif %}
+            </a>
+            <div class="blog-des mt-4">
+              <ul class="admin-post mb-2">
+                <li><span class="fa fa-user-o"></span> by {{post.author }}</li>
+                <li>
+                  <p><span class="fa fa-clock-o"></span>{{ post.date_posted | timesince }} ago</p>
+                </li>
+              
+              </ul>
+             
+              <p class="mb-3">{{post.body | safe}}</p>
+            </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        
+        <div class="col-lg-4 about-in blog-grid-info text-left mt-5">
+          <div class="title-content text-left">
+            <h6 class="title-subhny mb-3"><span>Our Services</span></h6>
+          </div>
+         {% if services %}
+         {% for item in services %}
+           <div class="card img">
+             <div class="card-body img">
+                <a href="{% url 'servicesdetail' item.slug %}" class="d-block">
+                  <img src="{{item.leadimg.url}}" alt="" class="img-fluid radius-image">
+                </a>
+                <h5 class="card-title mb-2 mt-3 text-center"><a href="{% url 'servicesdetail' item.slug %}">{{ item.title }}</a>
+                </h5>
+                  <p class="mb-3"></p>
+
+              </div>
+           </div>
+         {% endfor %}        
+        {% endif %}
+        </div> 
+     
+      </div>
+    </div>
+    </div>
+  </section>
+
+<!-- 
+  <section id="room" class="py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        {% if post %}
+        <div class="col-md-6">                    
+               {% if post.leadimg %}
+               <img src="{{post.leadimg.url}}" alt="" class="img-fluid radius-image">
+               {% endif %}
+             <h5 class="card-title mb-2"><a href="blog-single.html">{{ post.title }}</a>
+             </h5>
+               <p class="mb-3">{{post.body | safe}}</p>
+         </div>
+         {% endif %}
+            <div class="col-md-5">
+
+
+            </div>
+      </div>
+    </div>
+  </section>
+  
+   -->
+{% endblock content %}

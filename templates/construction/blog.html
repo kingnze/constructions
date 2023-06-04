@@ -1,0 +1,59 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Blog
+{% endblock title %}
+
+{% block content %}
+
+  <div class="breadcrumb-bg w3l-inner-page-breadcrumb py-5">
+    <div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">
+      <h2 class="title pt-5">Blog</h2>
+      <ul class="breadcrumbs-custom-path mt-3 text-center">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Blog Post </li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="w3l-blog py-5" id="blog">
+    <div class="container py-lg-5 py-md-4 py-2">
+      <div class="title-content text-left">
+        <h6 class="title-subhny mb-2"><span>Our Posts</span></h6>
+        <h3 class="title-w3l">Blog Posts</h3>
+      </div>
+      <div class="row inner-sec-w3ls">
+        {% if blog %}
+      {% for item in blog %}
+       <div class="col-lg-4 col-md-6 about-in blog-grid-info text-left mt-5">
+        <div class="card img">
+          <div class="card-body img">
+            <a href="{% url 'blogdetail' item.slug %}" class="d-block">
+              <img src="{{item.leadimg.url}}" alt="" class="img-fluid radius-image">
+            </a>
+            <div class="blog-des mt-4">
+              <ul class="admin-post mb-2">
+                <li>
+                  <span class="fa fa-user-o"></span><a href="#admin"> by {{item.author }}</a>
+                </li>
+                <li>
+                  <p><span class="fa fa-clock-o"></span>{{ item.date_posted | timesince }} ago</p>
+                </li>
+              
+              </ul>
+              <h5 class="card-title mb-2"><a href="{% url 'blogdetail' item.slug %}">{{ item.title | truncatechars:50 | safe }}</a>
+              </h5>
+              <!-- <p class="mb-3">{{item.body | truncatechars:100 | safe }}</p> -->
+
+            </div>
+          </div>
+        </div>
+      </div> 
+      {% endfor %}        
+      {% endif %}
+      </div>
+    </div>
+    </div>
+  </section>
+{% endblock content %}

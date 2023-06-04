@@ -1,0 +1,51 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Our Gallery
+{% endblock title %}
+
+{% block content %}
+
+  <div class="breadcrumb-bg w3l-inner-page-breadcrumb py-5">
+    <div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">
+      <h2 class="title pt-5">Our Gallery</h2>
+      <ul class="breadcrumbs-custom-path mt-3 text-center">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Gallery </li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="w3l-blog py-5" id="blog">
+    <div class="container py-lg-5 py-md-4 py-2">
+      <div class="title-content text-left">
+        <h6 class="title-subhny mb-2"><span>Our Amezing Gallery</span></h6>
+        <h3 class="title-w3l mb-5">Our Gallery</h3>
+      </div>
+      <div class="row inner-sec-w3ls">
+    <div class="gallery" id="gallery">
+      <div class="container">
+        <div class="gallery-main">
+          <div class="gallery-top">
+            {% if gimg %}
+            {% for item in gimg %}
+            <div class="gallery-top-img portfolio-grids">
+              <a href="{{item.imggallery.url}}" class="b-link-stripe b-animate-go lightninBox" data-lb-group="1">
+                    <img src="{{item.imggallery.url}}" class="img-responsive" alt="" />
+                    <div class="p-mask">
+                      <h4><span>{{ item.title}}</span></h4>
+                    </div>
+                  </a>
+            </div>
+            {% endfor %}        
+            {% endif %}
+        </div>
+      </div>
+    </div>
+    <!--//gallery-->
+      </div>
+    </div>
+    </div>
+  </section>
+{% endblock content %}

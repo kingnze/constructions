@@ -1,0 +1,494 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block content %}
+		<div id="slider" class="slider">
+			<div class="callbacks_container">
+        {% if slider %}
+         {% for item in slider %}
+          <ul class="rslides callbacks callbacks1" id="slider4">
+					<li>
+						<div class="banner-top">
+							<div class="banner-info_agile_w3ls">
+								<h3>{{item.title1}}</h3>
+								<p>{{item.smalltext1}}</p>
+								<a href="{% url 'services' %}" class="scroll">Our Service <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								<a href="{% url 'contact' %}" class="scroll">Contact Us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+							</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="banner-top1">
+							<div class="banner-info_agile_w3ls">
+								<h3>{{item.title2}}</h3>
+								<p>{{item.smalltext2}}</p>
+								<a href="{% url 'services' %}" class="scroll">Our Service <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								<a href="{% url 'contact' %}" class="scroll">Contact Us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+							</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="banner-top2">
+							<div class="banner-info_agile_w3ls">
+								<h3>{{item.title3}}</h3>
+								<p>{{item.smalltext3}}</p>
+								<a href="{% url 'services' %}" class="scroll">Our Service <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								<a href="{% url 'contact' %}" class="scroll">Contact Us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+							</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="banner-top3">
+							<div class="banner-info_agile_w3ls">
+								<h3>{{item.title4}}</h3>
+								<p>{{item.smalltext4}}</p>
+								<a href="{% url 'services' %}" class="scroll">Our Service <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+								<a href="{% url 'contact' %}" class="scroll">Contact Us <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+							</div>
+
+						</div>
+					</li>
+				</ul>
+        {% endfor %} 
+        {% endif %}
+        
+				
+
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+
+     
+<section class="w3l-index3 py-5" id="about">
+  <div class="container py-lg-5 py-md-3">
+    <div class="row">
+      {% if ourstory %}
+      {% for item in ourstory %}
+        <div class="col-lg-6">
+        <div class="position-relative">
+          <img src="{{item.leadimg.url}}" alt="" class="radius-image img-fluid">
+        </div>
+      </div>
+      <div class="col-lg-6 mt-lg-0 mt-5 align-self pl-lg-5">
+        <h6 class="title-subhny mb-2"><span>{{item.subtitle}}</span></h6>
+        <h3 class="title-w3l mx-0">{{item.title}}</h3>
+        <p class="mt-md-4 mt-3">{{item.body | truncatechars:300 | safe }}</p>
+        <a class="btn btn-style btn-primary mt-sm-5 mt-4" href="{% url 'ourstorydetail' item.slug %}"> Read More <span
+            class="fa fa-angle-double-right ml-2" aria-hidden="true"></span></a>
+      </div>
+      {% endfor %}        
+      {% endif %}
+      
+
+    </div>
+  </div>
+</section>
+
+<section class="w3l-upper-sec">
+  <div class="container">
+    <div class="row upper-sec-grids">
+      {% if aboutus %}
+      {% for item in aboutus %}
+         <div class="col-lg-7 upper-sec-grids-left pr-lg-5">
+        <h6 class="title-subhny mb-2"><span>{{item.subtitle}}</span></h6>
+        <h3 class="title-w3l mb-3">{{item.title}}</h3>
+        <p class="mb-3">{{item.body | truncatechars:300 | safe }}</p>
+
+          <a class="btn btn-style btn-primary mt-5" href="{% url 'aboutusdetail' item.id %}"> Read More <span
+            class="fa fa-angle-double-right ml-2" aria-hidden="true"></span></a>
+      </div>
+      <div class="col-lg-5 upper-sec-grids-right mt-lg-0 mt-5">
+
+        <div class="upper-wrap-grid mb-4">
+          <div class="upper-icon">
+            <span class="fa fa-users"></span>
+          </div>
+          <div class="upper-info">
+            <h4><a href="#url"> {{item.title1}}</a></h4>
+          </div>
+        </div>
+        <div class="upper-wrap-grid mb-4">
+          <div class="upper-icon">
+            <span class="fa fa-linode"></span>
+          </div>
+          <div class="upper-info">
+            <h4><a href="#url">{{item.title2}}</a></h4>
+          </div>
+        </div>
+        <div class="upper-wrap-grid">
+          <div class="upper-icon">
+            <span class="fa fa-thumbs-up"></span>
+          </div>
+          <div class="upper-info">
+            <h4><a href="#url">{{item.title3}}</a></h4>
+          </div>
+        </div>
+
+      </div>
+      {% endfor %}        
+      {% endif %}
+     
+    </div>
+  </div>
+</section> 
+
+<section class="w3l-features-8">
+      <div class="features py-5">
+    <div class="container py-md-5 py-3">
+      {% if ourservice %}
+      {% for item in ourservice %}
+        <div class="title-content text-left">
+        <h6 class="title-subhny mb-2"><span>{{item.subtitle}}</span></h6>
+        <h3 class="title-w3l mb-3">{{item.title}}</h3>
+        <p class="">{{item.subtext| truncatechars:200 | safe }}</p>
+      </div>
+      {% endfor %}        
+      {% endif %}
+      
+    <div class="fea-gd-vv row mt-lg-0 mt-4">
+      	{% if services %}
+      {% for item in services %}
+    <div class="float-top col-lg-4 col-sm-6 mt-md-5  mt-4">	
+        <a href="{% url 'servicesdetail' item.slug %}"><img style="height: 17rem!important;" src="{{item.leadimg.url}}" class="img-fluid radius-image" alt=""></a>
+      <div class="float-lt feature-gd row no-gutters">	
+          <div class="icon col-2"> <span class="fa fa-chain-broken" aria-hidden="true"></span></div>
+          <div class="icon-info col-10">
+          <h4><a href="{% url 'servicesdetail' item.slug %}">{{item.title}}</a> </h4>
+          <p>{{item.body | truncatechars:50 | safe }}</p>
+          </div>
+      </div>	
+    </div> 
+    	{% endfor %}        
+      {% endif %}				 
+    </div>  
+      
+      
+  </div>
+    </div>
+</section>
+
+<div class="w3l-content-1 w3l-progressblock py-5">
+  <div class="container py-lg-5 py-md-4 py-2">
+    <div class="row w3l-content-inf">
+      {% if whatwedo %}
+      {% for item in whatwedo %}
+        <div class="col-lg-6 w3l-content-left">
+        <h6 class="title-subhny mb-2"><span>{{item.subtitle}}</span></h6>
+        <h3 class="title-w3l mb-4">{{item.title}}</h3>
+        <p class="para-sub pr-lg-5 mt-md-4 mt-3 mx-auto">{{item.body| truncatechars:300 | safe }}</p>
+        <a class="btn btn-style btn-outline-light mt-sm-5 mt-4 mr-2" href="{% url 'whatwedodetail' item.id %}">
+          Read More <span class="fa fa-angle-double-right ml-2" aria-hidden="true"></span></a>
+      </div>     
+      <div class="col-lg-6 w3l-content-right pl-lg-5 mt-lg-0 mt-5">
+        <div class="progress-info info1 mb-4">
+          <h6 class="progress-tittle">{{item.quality_services}} <span class="">{{item.number1}}</span></h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:60%" aria-valuenow="90"
+              aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+        </div>
+        <div class="progress-info info2 mb-4">
+          <h6 class="progress-tittle">{{item.Weorking_ability}} <span class="">{{item.number2}}</span>
+          </h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%" aria-valuenow="95"
+              aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+        </div>
+        <div class="progress-info info3 mb-4">
+          <h6 class="progress-tittle">{{item.machine_power}} <span class="">{{item.number3}}</span></h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:85%" aria-valuenow="95"
+              aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+        </div>
+        <div class="progress-info info3 mb-4">
+          <h6 class="progress-tittle">{{item.detailed_planning}} <span class="">{{item.number4}}</span></h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 90%" aria-valuenow="95"
+              aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+        </div>
+        <div class="progress-info info3">
+          <h6 class="progress-tittle">{{item.improved_operating_conditions}} <span class="">{{item.number5}}</span></h6>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:95%" aria-valuenow="95"
+              aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}        
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+	
+
+<section class="w3l-blog py-5" id="blog">
+  <div class="container py-lg-5 py-md-4 py-2">
+    <div class="title-content text-left">
+      <h6 class="title-subhny mb-2"><span>Our Amezing Gallery</span></h6>
+      <h3 class="title-w3l mb-5">Our Gallery</h3>
+    </div>
+    <div class="row inner-sec-w3ls">
+	<div class="gallery" id="gallery">
+		<div class="container">
+			<div class="gallery-main">
+				<div class="gallery-top">
+          {% if gimg %}
+          {% for item in gimg %}
+					<div class="gallery-top-img portfolio-grids">
+						<a href="{{item.imggallery.url}}" class="b-link-stripe b-animate-go lightninBox" data-lb-group="1">
+									<img src="{{item.imggallery.url}}" class="img-responsive" alt="" />
+									<div class="p-mask">
+										<h4><span>{{ item.title}}</span></h4>
+									</div>
+								</a>
+					</div>
+          {% endfor %}        
+          {% endif %}
+			</div>
+		</div>
+	</div>
+	<!--//gallery-->
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="home-services py-5 pt-lg-0">
+  <div class="container py-lg-5 py-4 pt-lg-0">
+    <div class="row">
+      {% if integrity %}
+      {% for item in integrity %}
+        <div class="col-lg-3 col-6 mt-lg-0 mt-4">
+        <div class="box-wrap">
+          <div class="box-wrap-grid">
+            <div class="icon">
+              <span class="fa fa-linode"></span>
+            </div>
+            <div class="info">
+
+              <h4><a href="#url">{{item.title1}}</a></h4>
+            </div>
+          </div>
+          <p class="mt-3">{{item.text1}}</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6 mt-lg-0 mt-4">
+        <div class="box-wrap">
+          <div class="box-wrap-grid">
+            <div class="icon">
+              <span class="fa fa-cogs"></span>
+            </div>
+            <div class="info">
+
+              <h4><a href="#url">{{item.title2}}</a></h4>
+
+            </div>
+          </div>
+          <p class="mt-3">{{item.text2}}</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6 mt-lg-0 mt-4">
+        <div class="box-wrap">
+          <div class="box-wrap-grid">
+            <div class="icon">
+              <span class="fa fa-fire-extinguisher"></span>
+            </div>
+            <div class="info">
+
+              <h4><a href="#url">{{item.title3}}</a></h4>
+
+            </div>
+          </div>
+          <p class="mt-3">{{item.text3}}</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-6 mt-lg-0 mt-4">
+        <div class="box-wrap">
+          <div class="box-wrap-grid">
+            <div class="icon">
+              <span class="fa fa-shield"></span>
+            </div>
+            <div class="info">
+
+              <h4><a href="#url">{{item.title4}}</a></h4>
+
+            </div>
+          </div>
+          <p class="mt-3">{{item.text4}}</p>
+        </div>
+      </div>
+      {% endfor %}        
+      {% endif %}
+      
+    </div>
+  </div>
+</section>
+
+<section class="w3l-stats py-5" id="stats">
+  <div class=" container py-lg-5 py-3">
+    <div class="row w3l-stats-content-grids">
+      {% if stats %}
+      {% for item in stats %}
+        <div class="col-lg-6 w3l-stats-content-grid-left pr-lg-5 mb-lg-0 mb-5">
+        <div class="title-content text-left">
+          <h6 class="title-subhny mb-2"><span>{{item.subtitle}}</span></h6>
+          <h3 class="title-w3l mb-4">{{item.title}}</h3>
+          <p class="">{{item.text| truncatechars:300 | safe }}</p>
+        </div>
+        <div class="row stats-con mt-lg-5 mt-4">
+          <div class="col-6 stats_info counter_grid">
+            <span class="fa fa-building-o"></span>
+            <p class="counter">{{item.number1}}</p>
+            <h4>{{item.text1}}</h4>
+          </div>
+          <div class="col-6 stats_info counter_grid1">
+            <span class="fa fa-users"></span>
+            <p class="counter">{{item.number2}}</p>
+            <h4>{{item.text2}}</h4>
+          </div>
+          <div class="col-6 stats_info counter_grid mt-5">
+            <span class="fa fa-smile-o"></span>
+            <p class="counter">{{item.number3}}</p>
+            <h4>{{item.text3}}</h4>
+          </div>
+          <div class="col-6 stats_info counter_grid2 mt-5">
+            <span class="fa fa-trophy"></span>
+            <p class="counter">{{item.number4}}</p>
+            <h4>{{item.text4}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 w3l-stats-content-grid-right">
+        <img src="{{item.img1.url}}" alt="" class="radius-image img-fluid">
+        <img src="{{item.img2.url}}" alt="" class="radius-image img-fluid mt-4">
+      </div>
+      {% endfor %}       
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+
+<div class="w3l-middle py-5">
+  <div class="container py-lg-5 py-md-4">
+    {% if moreinfo %}
+      {% for item in moreinfo %}
+    <div>
+      <h6 class="title-subhny two mb-2"><span>{{item.subtitle}}</span></h6>
+      <h3 class="title-w3l two mb-4">{{item.title}}</h3>
+      <p class="pr-lg-5">{{item.body| truncatechars:320 | safe }}</p>
+      <div class="buttons mt-md-5 mt-4">
+        <a class="btn btn-style btn-white mr-3" href="{% url 'moreinfodetail' item.slug %}">
+          Read More <span class="fa fa-angle-double-right ml-2" aria-hidden="true"></span></a>
+      
+      </div>
+    </div>
+    {% endfor %}        
+      {% endif %}
+  </div>
+</div>
+
+<section class="w3l-blog py-5" id="blog">
+  <div class="container py-lg-5 py-md-4 py-2">
+    <div class="title-content text-left">
+      <h6 class="title-subhny mb-2"><span>Our Posts</span></h6>
+      <h3 class="title-w3l">Blog Posts</h3>
+    </div>
+    <div class="row inner-sec-w3ls">
+      {% if blog %}
+    {% for item in blog %}
+     <div class="col-lg-6 col-md-6 about-in blog-grid-info text-left mt-5">
+      <div class="card img">
+        <div class="card-body img">
+          <a href="{% url 'blogdetail' item.slug %}" class="d-block">
+            <img src="{{item.leadimg.url}}" alt="" class="img-fluid radius-image">
+          </a>
+          <div class="blog-des mt-4">
+            <ul class="admin-post mb-2">
+              <li>
+                <span class="fa fa-user-o"></span><a href="#admin"> by {{item.author }}</a>
+              </li>
+              <li>
+                <p><span class="fa fa-clock-o"></span>{{ item.date_posted | timesince }} ago</p>
+              </li>
+            
+            </ul>
+            <h5 class="card-title mb-2"><a href="{% url 'blogdetail' item.slug %}">{{ item.title | truncatechars:150 | safe }}</a>
+            </h5>
+            <!-- <p class="mb-3">{{item.body | truncatechars:100 | safe }}</p> -->
+
+          </div>
+        </div>
+      </div>
+    </div> 
+    {% endfor %}        
+    {% endif %}
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- <section class="w3l-testimonials py-5" id="testimonials">
+  <div class="container py-md-5 py-2">
+    <div class="row">
+      {% if testimonials %}
+      {% for item in testimonials %}
+      <div class="col-lg-5 pr-lg-5 mb-lg-0 mb-4">
+        <div class="title-content text-left">
+          <h6 class="title-subhny mb-2"><span>{{item.subtitle}}</span></h6>
+          <h3 class="title-w3l mb-4">{{item.title}}</h3>
+          <p>{{item.body | truncatechars:300 | safe }}</p>
+        </div>
+
+      </div>
+      {% endfor %}        
+      {% endif %}
+      
+      <div class="col-lg-7 pl-lg-5">
+        
+        <div class="owl-testimonial owl-carousel owl-theme">
+          {% if customers %}
+          {% for item in customers %}
+          <div class="item">
+            <div class="w3l-clients mt-lg-4 mt-3">
+              <div class="testimonial position-relative">
+                <div class="icon-test">
+                  <span class="fa fa-quote-right" aria-hidden="true"></span>
+                </div>
+                <p>{{item.body}}</p>
+              </div>
+              <div class="bottom-info mt-4">
+                <a class="comment-img" href="#url"><img src="{{item.img.url}}" class="img-responsive"
+                    alt="placeholder image"></a>
+                <div class="people-info align-self">
+                  <h3>{{item.name}}</h3>
+                  <p class="identity">{{item.city}}</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          {% endfor %}        
+          {% endif %}
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</section> -->
+  {% endblock content %}
